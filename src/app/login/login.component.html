@@ -1,0 +1,38 @@
+<section >
+    
+
+   <div class="wrapper-div">
+
+
+     <!-- <form class="mb-4" [formGroup]="signupForm" (ngSubmit)="onSubmit()" autocomplete="off"> -->
+        <form class="mb-4 form" autocomplete="off" (ngSubmit)="onSubmit()" [formGroup]="signupForm">
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input
+                type="text"
+                id="username"
+                formControlName="email"
+                class="form-control">
+            </div>
+            <div class="form-group mb-3">
+              <label for="email">password</label>
+              <input
+                type="password"
+                id="email"
+                formControlName="password"
+                class="form-control">
+            </div>
+         
+            <button class="btn btn-primary mr-6" type="submit" [disabled]="signupForm.invalid">Submit</button>
+
+
+            <p class="error mt-3" *ngIf="signupForm.invalid && signupForm.touched || error1" >Please enter valid Input</p>
+
+            <p class="error" *ngIf="error2">Username or Password is Incorrect</p>
+          
+          </form>
+
+   </div>
+
+
+</section>
